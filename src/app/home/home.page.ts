@@ -8,8 +8,10 @@ import { checkServerIdentity } from 'tls';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  pergunta: string = "";
-  resposta: string = "";
+  pergunta: string = '';
+  resposta: string = '';
+  revelar: string[] = ["display: none;", "font-size: 24px; font-weight: bold; text-align: end;"];
+  nivel: number = 0;
   animacao: boolean = false;
   constructor(private http: HttpClient) {}
 
@@ -19,7 +21,7 @@ export class HomePage {
   }
 
   exibirResposta(){
-  
+   this.nivel = 1;
   }
 
   solicitarCharada(){
@@ -30,6 +32,7 @@ export class HomePage {
       
       this.resposta = response[0].resposta;
       this.animacao = true;
+      this.nivel = 0;
     });
   }
 

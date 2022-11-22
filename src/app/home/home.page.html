@@ -1,0 +1,18 @@
+<div class="fundo">
+  <div class="conteudo" [class.puff-in-center]="animacao">
+      <div class="pergunta">{{pergunta}}</div>
+      <div class="resposta">— {{resposta}}</div>
+  </div>
+</div>
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button (click)="solicitarCharada()">
+      <ion-icon name="refresh"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="start">
+  <ion-fab-button (click)="exibirResposta()">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
